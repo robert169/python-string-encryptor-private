@@ -6,9 +6,15 @@ class encryptor:
         self.encrypt_table = bytes.maketrans(self.decrypted, self.encrypted)
         self.decrypt_table = bytes.maketrans(self.encrypted, self.decrypted)
     
-    def decrypt(self, message, secret, random):
-        return message.translate(self.decrypt_table)
-    
-    def encrypt(self, message, secret, random):
-        return message.translate(self.encrypt_table)
+    def decrypt(self, message, watermark, secret, random):
+        if watermark == "Made by roberth#0310":
+            return message.translate(self.decrypt_table)
+        else:
+            return "File was modified, breaking process | Made by roberth#0310"
+
+    def encrypt(self, message, watermark,secret, random):
+        if watermark == "Made by roberth#0310":
+            return message.translate(self.encrypt_table)
+        else:
+            return "File was modified, breaking process | Made by roberth#0310"
         
