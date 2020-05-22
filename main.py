@@ -14,7 +14,10 @@ try:
         input()
         os._exit(0)
 except:
-    print('Drag and drop file that you want to protect')
+    print('String Decryptor for Python by roberth#0310 (beta version)')
+    print('Atm it works only for python 3.7.x and 3.8.x')
+    print('After protecting file make sure the dll that contain python version is in same folder with protected code to be able to run it')
+    print('\n\nDrag and drop file that you want to protect')
     input()
     os._exit(0)
 second_file = (sys.argv[1].split('\\')[-1]).replace('.py', '')
@@ -47,8 +50,8 @@ with open(main_file, "r") as m:
                                         else:
                                             b = a.split("'")[each+2]
                                         strings_protected += 1
-                                    p = encryption.encryptor().encrypt(b, {random.choice(range(0, 999999))}, {random.choice(meme)})
-                                    l[f"'{b}'"] = f'encryption.encryptor().decrypt("{p}", {random.choice(range(0, 999999))}, " {random.choice(meme)}")'
+                                    p = encryption.encryptor().encrypt(b, "Made by roberth#0310", {random.choice(range(0, 999999))}, {random.choice(meme)})
+                                    l[f"'{b}'"] = f'encryption.encryptor().decrypt("{p}", "Made by roberth#0310", {random.choice(range(0, 999999))}, " {random.choice(meme)}")'
                                     print(f'[INFO] Protected line number {lol}')
                                     
                                 for each in l:
@@ -66,8 +69,8 @@ with open(main_file, "r") as m:
                                     else:
                                         b = a.split('"')[each+2]
                                     strings_protected += 1
-                                p = encryption.encryptor().encrypt(b, {random.choice(range(0, 999999))}, {random.choice(meme)})
-                                l[f'"{b}"'] = f"encryption.encryptor().decrypt('{p}', {random.choice(range(0, 999999))}, '{random.choice(meme)}')"
+                                p = encryption.encryptor().encrypt(b, "Made by roberth#0310", {random.choice(range(0, 999999))}, {random.choice(meme)})
+                                l[f'"{b}"'] = f"encryption.encryptor().decrypt('{p}', 'Made by roberth#0310', {random.choice(range(0, 999999))}, '{random.choice(meme)}')"
                                 print(f'[INFO] Protected line number {lol}')
                                 
                             for each in l:
